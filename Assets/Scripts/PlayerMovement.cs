@@ -54,9 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (!other.CompareTag("Inventory")) return;
-
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !isHolding)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !isHolding && other.CompareTag("Inventory"))
         {
             PickupItem(other);
         }
@@ -75,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         Collider playerCollider = GetComponent<Collider>();
         if (playerCollider != null)
         {
-            Physics.IgnoreCollision(playerCollider, heldItemCollider, true);
+            //Physics.IgnoreCollision(playerCollider, heldItemCollider, true);
         }
 
         isHolding = true;
@@ -91,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
         Collider playerCollider = GetComponent<Collider>();
         if (playerCollider != null)
         {
-            Physics.IgnoreCollision(playerCollider, heldItemCollider, false);
+            //Physics.IgnoreCollision(playerCollider, heldItemCollider, false);
         }
 
         heldItemRb = null;
