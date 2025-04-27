@@ -5132,7 +5132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3d6749d106a2a4db5e4a2e8642ed4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: {fileID: 0}
+  message: {fileID: 1572042330}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -5705,7 +5705,7 @@ MonoBehaviour:
   lookSpeedX: 2
   lookSpeedY: 2
   cameraTransform: {fileID: 330585546}
-  checkpoint_one: {fileID: 0}
+  plane2: {fileID: 1979356129}
 --- !u!1 &1258373362
 GameObject:
   m_ObjectHideFlags: 0
@@ -6135,7 +6135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1085339484}
-  Checkpoint1: {fileID: 1979356129}
+  plane2: {fileID: 1979356129}
 --- !u!4 &1964191542
 Transform:
   m_ObjectHideFlags: 0
