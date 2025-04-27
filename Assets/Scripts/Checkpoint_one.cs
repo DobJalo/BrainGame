@@ -8,7 +8,7 @@ public class Checkpoint_one : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && !PlayerPrefs.HasKey("Checkpoint"))
+        if(other.CompareTag("Player") && PlayerPrefs.GetInt("Checkpoint") != 1)
         {
             message.SetActive(true);
 
@@ -23,7 +23,7 @@ public class Checkpoint_one : MonoBehaviour
     private void HideMessage()
     {
         message.SetActive(false);
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
     }
 }
 

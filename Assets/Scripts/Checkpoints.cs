@@ -6,6 +6,7 @@ public class Checkpoints : MonoBehaviour
 {
     public GameObject player;
     public GameObject plane2;
+    public GameObject plane3;
 
     // Update is called once per frame
     void Update()
@@ -14,6 +15,7 @@ public class Checkpoints : MonoBehaviour
         if (Input.GetKey("0") && Input.GetKey(KeyCode.LeftShift))
         {
             player.transform.position = new Vector3(0, 0, 0); //start position
+            PlayerPrefs.DeleteKey("Checkpoint");
         }
         if (Input.GetKey("1") && Input.GetKey(KeyCode.LeftShift))
         {
@@ -21,7 +23,7 @@ public class Checkpoints : MonoBehaviour
         }
         if (Input.GetKey("2") && Input.GetKey(KeyCode.LeftShift))
         {
-            Debug.Log("Checkpoint in Progress");
+            player.transform.position = plane3.transform.position;
         }
         if (Input.GetKey("3") && Input.GetKey(KeyCode.LeftShift))
         {
@@ -53,7 +55,11 @@ public class Checkpoints : MonoBehaviour
             {
                 other.gameObject.transform.position = plane2.transform.position;
             }
-            //ADD CHECKPOINTS
+            if (PlayerPrefs.GetInt("Checkpoint") == 2)
+            {
+                other.gameObject.transform.position = plane3.transform.position;
+                
+            }
         }
     }
 }

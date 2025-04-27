@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float xRotation = 0f;
 
     public GameObject plane2;
+    public GameObject plane3;
 
     void Start()
     {
@@ -19,12 +20,14 @@ public class PlayerMovement : MonoBehaviour
         //start position (checkpoints)
         if (PlayerPrefs.HasKey("Checkpoint"))
         {
-            int loadCheckpoint = PlayerPrefs.GetInt("Checkpoint");
-            if (loadCheckpoint == 1)
+            if (PlayerPrefs.GetInt("Checkpoint") == 1)
             {
                 this.gameObject.transform.position = plane2.transform.position;
             }
-            //ADD CHECKPOINTS
+            if (PlayerPrefs.GetInt("Checkpoint") == 2)
+            {
+                this.gameObject.transform.position = plane3.transform.position;
+            }
         }
 
             // Mouse Sensitivity
