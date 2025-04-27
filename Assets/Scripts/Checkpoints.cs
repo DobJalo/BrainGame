@@ -39,4 +39,21 @@ public class Checkpoints : MonoBehaviour
             SceneManager.LoadScene("Main Menu");
         }
     }
+
+    //if player falls
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            if (!PlayerPrefs.HasKey("Checkpoint"))
+            {
+                other.gameObject.transform.position = new Vector3(0, 0, 0);
+            }
+            if (PlayerPrefs.GetInt("Checkpoint")==1)
+            {
+                other.gameObject.transform.position = plane2.transform.position;
+            }
+            //ADD CHECKPOINTS
+        }
+    }
 }
