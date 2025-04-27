@@ -10,12 +10,25 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private float xRotation = 0f;
 
+    public GameObject plane2;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>(); // Get Rigidbody component from Player
 
-        // Mouse Sensitivity
-        if (PlayerPrefs.HasKey("MouseSensitivity"))
+        //start position (checkpoints)
+        if (PlayerPrefs.HasKey("Checkpoint"))
+        {
+            int loadCheckpoint = PlayerPrefs.GetInt("Checkpoint");
+            if (loadCheckpoint == 1)
+            {
+                this.gameObject.transform.position = plane2.transform.position;
+            }
+            //ADD CHECKPOINTS
+        }
+
+            // Mouse Sensitivity
+            if (PlayerPrefs.HasKey("MouseSensitivity"))
         {
             float savedSensitivity = PlayerPrefs.GetFloat("MouseSensitivity");
             lookSpeedX = savedSensitivity;
