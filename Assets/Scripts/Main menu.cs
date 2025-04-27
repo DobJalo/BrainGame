@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
 
     public void OpenOptions()
     {
-        Debug.Log("Options menu opened"); // Replace with your own logic
+        SceneManager.LoadScene("Settings");
     }
 
     public void QuitGame()
