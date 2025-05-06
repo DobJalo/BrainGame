@@ -7,6 +7,9 @@ public class Checkpoints : MonoBehaviour
     public GameObject player;
     public GameObject plane2;
     public GameObject plane3;
+    public GameObject backToMenu;
+
+    public bool backToMenuBool = false;
 
     // Update is called once per frame
     void Update()
@@ -36,10 +39,28 @@ public class Checkpoints : MonoBehaviour
         }
 
         //pause
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && backToMenuBool==false)
         {
-            SceneManager.LoadScene("Main Menu");
+            backToMenu.SetActive(true);
+            backToMenuBool = true;
         }
+        else if (Input.GetKeyDown(KeyCode.Escape) && backToMenuBool == true)
+        {
+            backToMenu.SetActive(false);
+            backToMenuBool = false;
+        }
+    }
+
+    public void CloseMenu()
+    {
+        backToMenu.SetActive(false);
+        backToMenuBool = false;
+    }
+
+    //to main menu
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 
     //if player falls
