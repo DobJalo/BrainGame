@@ -9,9 +9,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void OpenOptions()
+    public void OpenSettings()
     {
-        Debug.Log("Options menu opened"); // Replace with your own logic
+        Debug.Log("Settings menu opened"); // Replace with your own logic
     }
 
     public void QuitGame()
