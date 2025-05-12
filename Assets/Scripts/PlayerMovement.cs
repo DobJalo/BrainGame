@@ -39,8 +39,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate() // FixedUpdate is better for synchronization physics and movement
     {
         // Player movement
-        float moveX = -Input.GetAxis("Horizontal");
-        float moveZ = -Input.GetAxis("Vertical");
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
 
         //SPRINT
         /*if (Input.GetKeyDown(KeyCode.LeftShift))
