@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 0.2f;
+    public float speed = 2f;
     public float lookSpeedX = 2f;
     public float lookSpeedY = 2f;
 
@@ -42,7 +42,28 @@ public class PlayerMovement : MonoBehaviour
         float moveX = -Input.GetAxis("Horizontal");
         float moveZ = -Input.GetAxis("Vertical");
 
-        Vector3 move = transform.right * moveX + transform.forward * moveZ;
+        //SPRINT
+        /*if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Transform child = transform.GetChild(0);
+            Vector3 pos = child.position;
+            pos.z = 0.01f;
+            child.position = pos;
+            //fieldOfView 
+
+            speed = 7f;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            Transform child = transform.GetChild(0);
+            Vector3 pos = child.position;
+            pos.z = 0.2f;
+            child.position = pos;
+
+            speed = 2f;
+        }*/
+
+            Vector3 move = transform.right * moveX + transform.forward * moveZ;
         rb.MovePosition(rb.position + move * speed * Time.fixedDeltaTime);
     }
 
